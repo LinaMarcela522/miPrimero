@@ -23,7 +23,7 @@ jobs:
           server_address: smtp.gmail.com
           server_port: 465
           username: ${{ secrets.USER_EMAIL}}
-          password: ${{ secrets.USER_PASSWORD}}
+          password: ${{ secrets.PASSWORD_EMAIL}}
           subject: "Mi primer correo con Github Actions"
           body: "El flujo de trabajo ha finalizado correctamente: ${{ github.repository }}"
           to: liperezh@unal.edu.co
