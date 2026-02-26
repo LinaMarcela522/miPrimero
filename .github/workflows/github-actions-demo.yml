@@ -16,3 +16,15 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+
+      - name: Enviar Correo
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.USER_EMAIL}}
+          password: ${{ secrets.USER_PASSWORD}}
+          subject: "Mi primer correo con Github Actions"
+          body: "El flujo de trabajo ha finalizado correctamente: ${{ github.repository }}"
+          to: liperezh@unal.edu.co
+          from: Henao 
